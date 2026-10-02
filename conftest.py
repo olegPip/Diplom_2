@@ -72,7 +72,7 @@ def cleanup_user(api_session):
             api_session.delete(
                 f"{BASE_URL}/auth/user",
                 headers={"Authorization": token},
-                timeout=20,
+                timeout=60,
             )
         except requests.RequestException:
             pass
