@@ -1,0 +1,30 @@
+# Виртуальное окружение
+.venv/
+venv/
+env/
+ENV/
+
+# Байт-код и кэши Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Кэш pytest
+.pytest_cache/
+
+# Allure: и результаты, и отчёт
+allure-results/
+allure-report/
+
+# Секреты и переменные окружения
+.env
+.envrc
+
+# IDE (PyCharm)
+.idea/
+
+# Логи и временные файлы
+*.log
+tmp/
+temp/
