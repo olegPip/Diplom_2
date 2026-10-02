@@ -38,7 +38,13 @@ def registered_user(api_session, new_user):
     response.raise_for_status()
     body = response.json()
     assert body.get("success") is True
-    return {**new_user, **body.get("user", {})}
+    return {
+        **new_user,
+        **body.get("user", {}),
+        "accessToken": body["accessToken"],
+        "refreshToken": body.get("refreshToken"),
+    }
+
 
 
 @pytest.fixture

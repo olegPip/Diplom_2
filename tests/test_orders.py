@@ -30,7 +30,10 @@ class TestCreateOrder:
             timeout=20,
         )
 
-        assert response.status_code == 401
+        assert response.status_code == 200
+        body = response.json()
+        assert body["success"] is True
+        assert isinstance(body["order"]["number"], int)
 
     @allure.title("Создание заказа без ингредиентов")
     @allure.severity(allure.severity_level.NORMAL)
